@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d0d1a">
+<title>Jason Dark — Books, Music &amp; App</title>
+<meta name="description" content="Official home of Jason Dark — read the books, watch the music, download the app.">
+<link rel="icon" href="jason dark.png" type="image/png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand"><img class="brand-icon" src="jason dark.png" alt="Jason Dark logo"> Jason Dark</div>
+
+    <nav class="tabs" id="tabNav">
+      <button class="tab-btn active" data-tab="home" data-hint="Overview & app download">Home</button>
+      <button class="tab-btn" data-tab="music" data-hint="Watch music videos">Music</button>
+      <button class="tab-btn" data-tab="books" data-hint="Read the books">Books</button>
+      <button class="tab-btn" data-tab="feedback" data-hint="Comment & connect">Feedback</button>
+      <button class="tab-btn" data-tab="profile" data-hint="View and edit your profile">Profile</button>
+      <button class="tab-btn" data-tab="assistant" data-hint="Ask the Jason AI assistant">Ask Jason AI</button>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="guideBtn" title="Take the guided tour">?</button>
+      <a class="btn btn-ghost nav-email-btn" href="mailto:asapdark15@gmail.com" title="Email Jason Dark">Email</a>
+      <div class="realtime-status" id="realtimeStatus" data-status="connecting">Realtime: connecting...</div>
+      <div id="navAuthArea"><!-- filled by JS: sign-in button or avatar chip --></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ HOME ============ -->
+  <section class="page active" id="page-home">
+    <div class="hero">
+      <div class="hero-orb"></div>
+      <span class="eyebrow">Author · Composer</span>
+      <h1>Welcome to<br>Jason Dark's world.</h1>
+      <p class="sub">Stories that stay with you after the lights go out, and music written to sit right beside them. Read, listen, and take it all with you.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" onclick="switchTab('books')">Start reading</button>
+        <button class="btn btn-ghost" onclick="switchTab('music')">Watch the music</button>
+      </div>
+      <div class="home-connect">
+        <p class="home-connect-title">Connect with Jason Dark</p>
+        <div class="connect-links">
+          <a class="connect-btn connect-instagram" href="https://www.instagram.com/jasondarkofficial/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.5 2.2a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+            <span class="connect-label">Instagram</span>
+          </a>
+          <a class="connect-btn connect-tiktok" href="https://www.tiktok.com/@jasondarkofficial?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.5 6.5c-.08 0-.16 0-.24.01A5.76 5.76 0 0 1 13 3v8.73a3.77 3.77 0 1 0 3.75 3.75V9.75a6.5 6.5 0 0 1 1.75.04V6.5h-.99Z"/></svg>
+            <span class="connect-label">TikTok</span>
+          </a>
+          <a class="connect-btn connect-patreon" href="https://www.patreon.com/cw/JasonDark" target="_blank" rel="noopener" aria-label="Patreon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Zm8 0H20v11h-2.5V6.5Z"/></svg>
+            <span class="connect-label">Patreon</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BIG APP DOWNLOAD BANNER -->
+    <div class="app-banner glass glossy" id="appBanner" data-hint="Get the app on your phone">
+      <div class="app-banner-left">
+        <div class="app-icon" id="appIconLetter">J</div>
+        <div>
+          <h3 id="appName">Jason Dark App</h3>
+          <p id="appTagline">Carry the whole universe in your pocket — books, music, and more.</p>
+          <span class="app-tag" id="appVersion">Free · Android</span>
+        </div>
+      </div>
+      <a class="btn btn-primary" id="appDownloadBtn" href="#" download>⬇ Download APK</a>
+    </div>
+
+    <div class="section-head">
+      <h2>Two worlds, one home</h2>
+      <p>Everything Jason makes, in one place — free, forever.</p>
+    </div>
+    <div class="grid">
+      <div class="card glass" style="padding:26px; cursor:pointer;" onclick="switchTab('books')">
+        <h4>📚 Books</h4>
+        <p>Full stories, free to read, hosted in an accessible online library.</p>
+      </div>
+      <div class="card glass" style="padding:26px; cursor:pointer;" onclick="switchTab('music')">
+        <h4>🎵 Music</h4>
+        <p>Watch every music video without ever leaving this page.</p>
+      </div>
+      <div class="card glass" style="padding:26px; cursor:pointer;" onclick="switchTab('feedback')">
+        <h4>💬 Feedback</h4>
+        <p>Leave a comment, reply, and connect with other readers.</p>
+      </div>
+      <div class="card glass" style="padding:26px; cursor:pointer;" onclick="switchTab('assistant')">
+        <h4>✨ Ask Jason AI</h4>
+        <p>Curious about Jason, a book, or a song? Just ask.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MUSIC ============ -->
+  <section class="page" id="page-music">
+    <div class="section-head">
+      <h2>Music</h2>
+      <p>Watch every video right here — no need to leave the site.</p>
+    </div>
+    <div class="grid" id="videoGrid"></div>
+    <div style="text-align:center; margin-top:34px;">
+      <a class="btn btn-ghost" id="channelLink" href="https://www.youtube.com/@jasondarkofficial" target="_blank" rel="noopener">Visit the full YouTube channel ↗</a>
+    </div>
+  </section>
+
+  <!-- ============ BOOKS ============ -->
+  <section class="page" id="page-books">
+    <div class="section-head">
+      <h2>Books</h2>
+      <p>Click a cover to start reading. Sign in to pick up right where you left off.</p>
+    </div>
+    <div class="grid" id="bookGrid"></div>
+  </section>
+
+  <!-- ============ FEEDBACK ============ -->
+  <section class="page" id="page-feedback">
+    <div class="section-head">
+      <h2>Feedback</h2>
+      <p>Comment, reply, and like — a free profile is all you need.</p>
+    </div>
+
+    <div id="feedbackLocked" class="feedback-lock glass" style="display:none;">
+      <h3>Create a free profile to join in</h3>
+      <p style="max-width:380px; margin:0 auto 20px;">Just a name and password — takes ten seconds, no email required.</p>
+      <button class="btn btn-primary" onclick="openAuthModal('signup')">Create profile</button>
+    </div>
+
+    <div id="feedbackUnlocked" style="display:none;">
+      <div class="composer glass" id="composer">
+        <img id="composerAvatar" src="" alt="">
+        <div style="flex:1;">
+          <textarea id="commentInput" placeholder="Share your thoughts with Jason and other readers..."></textarea>
+          <div class="composer-actions">
+            <button class="btn btn-primary" id="postCommentBtn">Post</button>
+          </div>
+        </div>
+      </div>
+      <div id="commentList"></div>
+    </div>
+  </section>
+
+  <!-- ============ PROFILE ============ -->
+  <section class="page" id="page-profile">
+    <div class="section-head">
+      <h2>Your profile</h2>
+      <p>Manage your info, see recent activity, and continue reading where you left off.</p>
+    </div>
+
+    <div class="profile-grid">
+      <div class="profile-card glass">
+        <div class="profile-summary">
+          <img id="profileAvatar" src="assets/icons/default-avatar.svg" alt="Profile avatar">
+          <div>
+            <h3 id="profileName">Your Name</h3>
+            <p id="profileStats">Signed in users can update their profile here.</p>
+          </div>
+        </div>
+        <div class="profile-update">
+          <h4>Update your profile</h4>
+          <label class="logo-upload" for="profileAvatarInput">
+            <img id="profileAvatarPreview" src="assets/icons/default-avatar.svg" alt="Avatar preview">
+            <span id="profileAvatarLabel">Upload a new avatar (optional)</span>
+          </label>
+          <input type="file" id="profileAvatarInput" accept="image/*" style="display:none;">
+          <div class="field"><label>Name</label><input type="text" id="profileNameInput"></div>
+          <div class="form-error" id="profileUpdateError"></div>
+          <button class="btn btn-primary btn-block" id="profileSaveBtn">Save profile</button>
+          <button class="btn btn-danger btn-block" id="profileSignOutBtn" type="button">Sign out</button>
+        </div>
+      </div>
+
+      <div class="profile-card glass" id="profileActivityCard">
+        <h4>Reading activity</h4>
+        <p id="profileActivityNote">Your previously opened books will appear here.</p>
+        <div id="profileBooksList"></div>
+      </div>
+
+      <div class="profile-card glass" id="profileCommentsCard">
+        <h4>Recent activity</h4>
+        <p id="profileCommentsNote">Your latest comments will appear here.</p>
+        <div id="profileCommentsList"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ READER ============ -->
+  <section class="page" id="page-reader">
+    <div class="section-head">
+      <h2>Book reader</h2>
+      <p>Read books directly on the website, then download only after agreeing to the terms.</p>
+    </div>
+
+    <div class="reader-panel glass">
+      <div class="reader-header">
+        <button class="btn btn-ghost" onclick="switchTab('books')">← Back to books</button>
+      </div>
+      <div class="reader-details">
+        <img class="book-cover" id="readerCover" src="" alt="">
+        <div class="reader-meta">
+          <h3 id="readerTitle"></h3>
+          <p id="readerBlurb"></p>
+          <div class="reader-disclaimer" id="readerDisclaimer">
+            <strong>Terms:</strong> This reader is for personal use only. Check the box below to unlock download access.
+          </div>
+          <label class="reader-checkbox"><input type="checkbox" id="readerAgreeCheckbox"> I agree to the terms and guidelines</label>
+          <div class="reader-actions">
+            <button class="btn btn-primary" id="readerOpenBtn" disabled>Read on website</button>
+            <a class="btn btn-ghost" id="readerDownloadBtn" href="#" target="_blank" rel="noopener" aria-disabled="true">Download PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="reader-frame-wrap" id="readerFrameWrap" style="display:none;">
+        <iframe id="readerFrame" src="" title="Book reader"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ASSISTANT ============ -->
+  <section class="page" id="page-assistant">
+    <div class="section-head">
+      <h2>Ask Jason AI</h2>
+      <p>A quick, free assistant that knows the facts about Jason, his books, and his music.</p>
+    </div>
+    <div class="assistant-panel glass">
+      <div class="assistant-header">
+        <div class="orb"></div>
+        <div>
+          <strong>Jason AI</strong>
+          <div style="font-size:.75rem; color:var(--text-muted);">Ask me anything about Jason, the books, or the music</div>
+        </div>
+      </div>
+      <div class="assistant-messages" id="assistantMessages"></div>
+      <div class="assistant-suggest" id="assistantSuggest">
+        <strong>Try one of these:</strong>
+      </div>
+      <div class="assistant-input">
+        <input type="text" id="assistantInput" placeholder="Type your question…">
+        <button id="assistantSend" title="Send">➤</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-copy">
+      <p>© <span id="year"></span> Jason Dark · Built thoughtfully for readers and fans.</p>
+      <p id="footerLinks"></p>
+    </div>
+    <div class="footer-actions">
+      <a class="btn btn-ghost footer-email" href="mailto:asapdark15@gmail.com">Email Jason</a>
+      <div class="footer-socials" id="footerSocials"></div>
+    </div>
+  </div>
+</footer>
+
+<button class="floating-email-btn" onclick="window.location.href='mailto:asapdark15@gmail.com'" title="Email Jason Dark">✉ Email Jason</button>
+
+<!-- ============ GUIDE FAB ============ -->
+<button class="guide-fab" id="guideFab" title="Take the guided tour">?</button>
+<div class="tour-tooltip" id="tourTooltip"></div>
+
+<!-- ============ TOASTS ============ -->
+<div class="toast-stack" id="toastStack"></div>
+
+<!-- ============ AUTH MODAL ============ -->
+<div class="modal-backdrop" id="authBackdrop">
+  <div class="modal">
+    <button class="modal-close" onclick="closeAuthModal()">✕</button>
+
+    <div id="loginView">
+      <h3>Welcome back</h3>
+      <p class="modal-sub">Sign in to your Jason Dark profile.</p>
+      <div class="field"><label>Name</label><input type="text" id="loginName" autocomplete="username"></div>
+      <div class="field"><label>Password</label><input type="password" id="loginPassword" autocomplete="current-password"></div>
+      <div class="form-error" id="loginError"></div>
+      <button class="btn btn-primary btn-block" id="loginBtn">Sign in</button>
+      <p class="switch-line">New here? <a onclick="switchAuthView('signup')">Create a profile</a></p>
+    </div>
+
+    <div id="signupView" style="display:none;">
+      <h3>Create your profile</h3>
+      <p class="modal-sub">No email needed — just a name and password.</p>
+      <label class="logo-upload" for="logoInput">
+        <img id="logoPreview" src="assets/icons/default-avatar.svg" alt="">
+        <span id="logoLabel">Upload a logo / photo (optional)</span>
+      </label>
+      <input type="file" id="logoInput" accept="image/*" style="display:none;">
+      <div class="field" style="margin-top:14px;"><label>Name</label><input type="text" id="signupName" autocomplete="username"></div>
+      <div class="field"><label>Password</label><input type="password" id="signupPassword" autocomplete="new-password"></div>
+      <div class="form-error" id="signupError"></div>
+      <button class="btn btn-primary btn-block" id="signupBtn">Create profile</button>
+      <p class="switch-line">Already have one? <a onclick="switchAuthView('login')">Sign in</a></p>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/data.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

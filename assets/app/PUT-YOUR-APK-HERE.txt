@@ -1,0 +1,10 @@
+Drop your built .apk file in this folder, then update the "apkUrl" value
+in js/data.js to match its filename, e.g.:
+
+  apkUrl: "assets/app/jason-dark-app.apk"
+
+A GitHub repo has a 100MB per-file limit and free GitHub Pages sites have a
+soft 1GB size limit — most APKs are fine. If yours is large, instead:
+1. Create a "Release" on your GitHub repo and upload the APK there.
+2. Copy the release's direct download link.
+3. Paste that link into apkUrl in js/data.js instead of a local file path.
