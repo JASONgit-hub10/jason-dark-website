@@ -17,7 +17,6 @@
     <div class="brand"><img class="brand-icon" src="jason dark.png" alt="Jason Dark logo"> Jason Dark</div>
     <div class="mobile-menu-control">
       <button class="icon-btn mobile-menu-toggle" id="mobileMenuBtn" aria-label="Open menu">☰</button>
-      <span class="mobile-menu-hint">Tap for other tabs</span>
     </div>
 
     <nav class="tabs" id="tabNav">
@@ -32,7 +31,10 @@
     <div class="nav-actions">
       <button class="icon-btn" id="guideBtn" title="Take the guided tour">?</button>
       <a class="btn btn-ghost nav-email-btn" href="mailto:asapdark15@gmail.com" title="Email Jason Dark">Email</a>
-      <div class="realtime-status" id="realtimeStatus" data-status="connecting">Realtime: connecting...</div>
+      <div class="realtime-status" id="realtimeStatus" data-status="connecting" aria-live="polite">
+        <span class="realtime-icon" aria-hidden="true">⟳</span>
+        <span class="realtime-label">Realtime: connecting...</span>
+      </div>
       <div id="navAuthArea"><!-- filled by JS: sign-in button or avatar chip --></div>
     </div>
   </div>
