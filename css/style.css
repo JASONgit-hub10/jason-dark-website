@@ -140,6 +140,12 @@ img{ max-width:100%; display:block; }
   transition: transform .2s var(--ease), background .2s var(--ease);
 }
 .icon-btn:hover{ transform:translateY(-2px) scale(1.04); background:var(--glass-strong); }
+.mobile-menu-control{ display:none; align-items:center; gap:10px; }
+.mobile-menu-hint{
+  color:var(--text-muted);
+  font-size:.82rem;
+  opacity:.95;
+}
 .mobile-menu-toggle{ display:none; }
 .mobile-menu-panel{ display:none; }
 .mobile-menu-panel.open{ display:block; }
@@ -185,9 +191,15 @@ img{ max-width:100%; display:block; }
   .topbar-inner{ flex-wrap:wrap; }
   .tabs{ display:none; }
   .nav-actions{ gap:10px; }
+  .mobile-menu-control{ display:flex; }
   .mobile-menu-toggle{ display:flex; }
   .brand{ flex:1; }
   .topbar{ padding:12px 0; }
+  .mobile-menu-control{ order:1; width:100%; justify-content:flex-start; }
+  .mobile-menu-hint{ transition: opacity .2s ease; }
+  .mobile-menu-toggle:hover + .mobile-menu-hint,
+  .mobile-menu-hint:hover{ opacity:1; }
+  .nav-email-btn{ display:none; }
 }
 .home-connect{
   margin-top:18px;
