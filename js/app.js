@@ -44,7 +44,15 @@ function renderAppBanner(){
   document.getElementById('appTagline').textContent = a.tagline;
   document.getElementById('appVersion').textContent = `Free · Android · ${a.versionLabel}`;
   document.getElementById('appIconLetter').textContent = a.name.trim().charAt(0).toUpperCase();
-  document.getElementById('appDownloadBtn').href = a.apkUrl;
+  const downloadLink = document.getElementById('appDownloadLink');
+  if(downloadLink){ downloadLink.href = a.apkUrl; }
+}
+
+function showAppGuidelines(){
+  const panel = document.getElementById('appGuidelines');
+  if(!panel) return;
+  panel.style.display = 'block';
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function renderVideos(){

@@ -307,13 +307,13 @@ img{ max-width:100%; display:block; }
   margin:50px 0;
   border-radius:var(--radius-lg);
   padding:44px;
-  display:flex; align-items:center; justify-content:space-between; gap:32px;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:32px;
   flex-wrap:wrap;
   background:linear-gradient(135deg, rgba(139,108,255,0.20), rgba(203,168,106,0.12));
   border:1px solid rgba(255,255,255,0.14);
   box-shadow:var(--shadow-deep);
-  cursor:pointer;
   overflow:hidden;
+  min-height:260px;
 }
 .app-banner::after{
   content:'';
@@ -334,6 +334,32 @@ img{ max-width:100%; display:block; }
 }
 .app-banner h3{ font-size:1.5rem; margin-bottom:4px; }
 .app-banner p{ margin:0; font-size:.92rem; }
+.app-guidelines{
+  display:none;
+  width:100%;
+  margin-top:24px;
+  padding:22px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.14);
+}
+.app-guidelines-title{
+  margin:0 0 14px;
+  font-size:1rem;
+  font-weight:700;
+  color:#fff;
+}
+.app-guidelines ol{
+  margin:0 0 18px 18px;
+  padding:0;
+  color:var(--text);
+  line-height:1.7;
+}
+.app-guidelines-note{
+  margin-top:14px;
+  font-size:.92rem;
+  color:var(--text-muted);
+}
 .app-tag{
   display:inline-block; margin-top:8px;
   font-size:.7rem; letter-spacing:.15em; text-transform:uppercase;
