@@ -124,8 +124,20 @@ const SITE_DATA = {
   ],
   assistantKnowledge: [
     {
-      keywords: ["who", "jason", "you", "artist", "about"],
+      keywords: ["who", "jason", "dark", "writer", "musician", "creator"],
       answer: "Jason Dark is a writer and musician who builds dark, atmospheric worlds across books and music. Ask me about his books, his music, or the app!"
+    },
+    {
+      keywords: ["voxt", "series", "saga", "dark fantasy", "voxt series"],
+      answer: "The VOXT series is Jason Dark's dark fantasy saga — a mix of eerie city streets, mythic struggle, and haunting audio storytelling. It’s best explored through the Books tab and the app."
+    },
+    {
+      keywords: ["next", "upcoming", "working", "project", "release", "future"],
+      answer: "Jason is working on new stories and music projects that continue his dark, atmospheric style. Keep an eye on this site for updates and new releases."
+    },
+    {
+      keywords: ["patreon", "support", "donate", "back", "membership"],
+      answer: "You can support Jason on Patreon by heading to his Patreon page. Your support helps make more books, music, and app updates possible."
     },
     {
       keywords: ["book", "books", "novel", "read", "story"],
