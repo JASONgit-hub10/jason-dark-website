@@ -15,6 +15,7 @@
 <header class="topbar">
   <div class="wrap topbar-inner">
     <div class="brand"><img class="brand-icon" src="jason dark.png" alt="Jason Dark logo"> Jason Dark</div>
+    <button class="icon-btn mobile-menu-toggle" id="mobileMenuBtn" aria-label="Open menu">☰</button>
 
     <nav class="tabs" id="tabNav">
       <button class="tab-btn active" data-tab="home" data-hint="Overview & app download">Home</button>
@@ -30,6 +31,24 @@
       <a class="btn btn-ghost nav-email-btn" href="mailto:asapdark15@gmail.com" title="Email Jason Dark">Email</a>
       <div class="realtime-status" id="realtimeStatus" data-status="connecting">Realtime: connecting...</div>
       <div id="navAuthArea"><!-- filled by JS: sign-in button or avatar chip --></div>
+    </div>
+  </div>
+  <div class="mobile-menu-panel" id="mobileMenuPanel" aria-hidden="true">
+    <div class="mobile-menu-header">
+      <span>Menu</span>
+      <button class="icon-btn" id="mobileMenuCloseBtn" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="mobile-menu-list">
+      <button class="mobile-menu-link" data-tab="home">Home</button>
+      <button class="mobile-menu-link" data-tab="music">Music</button>
+      <button class="mobile-menu-link" data-tab="books">Books</button>
+      <button class="mobile-menu-link" data-tab="feedback">Feedback</button>
+      <button class="mobile-menu-link" data-tab="profile">Profile</button>
+      <button class="mobile-menu-link" data-tab="assistant">Ask Jason AI</button>
+    </nav>
+    <div class="mobile-menu-actions">
+      <a class="btn btn-ghost" href="mailto:asapdark15@gmail.com">Email Jason</a>
+      <div id="mobileAuthArea"><!-- filled by JS: sign-in button or avatar chip --></div>
     </div>
   </div>
 </header>

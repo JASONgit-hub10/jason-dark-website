@@ -13,6 +13,7 @@ function switchTab(tab){
   document.getElementById('page-' + tab).classList.add('active');
   const btn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
   if(btn) btn.classList.add('active');
+  closeMobileMenu();
   window.scrollTo({ top: 0, behavior: 'smooth' });
   if(tab === 'feedback') renderFeedbackTab();
   if(tab === 'assistant') renderAssistantWelcome();
@@ -21,6 +22,24 @@ function switchTab(tab){
 document.getElementById('tabNav').addEventListener('click', (e) => {
   const btn = e.target.closest('.tab-btn');
   if(btn) switchTab(btn.dataset.tab);
+});
+
+function openMobileMenu(){
+  const panel = document.getElementById('mobileMenuPanel');
+  if(panel){ panel.classList.add('open'); panel.setAttribute('aria-hidden', 'false'); }
+}
+
+function closeMobileMenu(){
+  const panel = document.getElementById('mobileMenuPanel');
+  if(panel){ panel.classList.remove('open'); panel.setAttribute('aria-hidden', 'true'); }
+}
+
+document.getElementById('mobileMenuBtn')?.addEventListener('click', openMobileMenu);
+document.getElementById('mobileMenuCloseBtn')?.addEventListener('click', closeMobileMenu);
+document.querySelectorAll('.mobile-menu-link').forEach(btn => {
+  btn.addEventListener('click', () => {
+    switchTab(btn.dataset.tab);
+  });
 });
 
 /* ---------------------------------------------------------------------- */
