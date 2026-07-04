@@ -29,8 +29,7 @@ const SITE_DATA = {
   app: {
     name: "Jason Dark App",
     tagline: "Carry the whole universe in your pocket — books, music, and more.",
-    // Put your built APK inside assets/app/ and update the filename below.
-    // GitHub also works great for this: use a "Release" and paste that .apk link here.
+    // Point this to the APK file in the app assets folder.
     apkUrl: "assets/app/jason-dark-app.apk",
     versionLabel: "v1.0"
   },
